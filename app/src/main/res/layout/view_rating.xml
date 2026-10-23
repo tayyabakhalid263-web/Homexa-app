@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reusable rating row: star icon + rating number -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ratingViewRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:contentDescription="@string/rating"
+        android:src="@drawable/ic_star" />
+
+    <TextView
+        android:id="@+id/textRatingValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_xs"
+        android:text="@string/provider_ahmed_rating"
+        android:textAppearance="@style/TextAppearance.Homexa.Caption"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold" />
+
+</LinearLayout>

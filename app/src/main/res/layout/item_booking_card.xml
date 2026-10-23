@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reusable BookingCard for My Bookings and Recent Booking -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bookingCardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_md"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="@dimen/radius_medium"
+    app:cardElevation="@dimen/card_elevation"
+    app:strokeColor="@color/divider"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/card_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textBookingService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/booking_sample_1_service"
+                android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+            <TextView
+                android:id="@+id/textBookingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_status_confirmed"
+                android:paddingStart="@dimen/space_md"
+                android:paddingTop="@dimen/space_xs"
+                android:paddingEnd="@dimen/space_md"
+                android:paddingBottom="@dimen/space_xs"
+                android:text="@string/status_confirmed"
+                android:textAppearance="@style/TextAppearance.Homexa.Caption"
+                android:textColor="@color/status_confirmed"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textBookingProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/booking_sample_1_provider"
+            android:textAppearance="@style/TextAppearance.Homexa.Body"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:id="@+id/textBookingDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/booking_sample_1_datetime"
+            android:textAppearance="@style/TextAppearance.Homexa.Caption" />
+
+        <TextView
+            android:id="@+id/textBookingAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/booking_sample_1_address"
+            android:textAppearance="@style/TextAppearance.Homexa.Caption" />
+
+        <TextView
+            android:id="@+id/textBookingPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/booking_sample_1_price"
+            android:textAppearance="@style/TextAppearance.Homexa.Body"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

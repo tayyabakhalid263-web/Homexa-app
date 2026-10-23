@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Reusable payment methods block.
+    Shows Cash on Delivery (selected) and JazzCash (unselected) as static UI only.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/paymentMethodsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Cash on Delivery — visually selected -->
+    <LinearLayout
+        android:id="@+id/paymentCodRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_payment_selected"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding">
+
+        <ImageView
+            android:id="@+id/imagePaymentCodIcon"
+            android:layout_width="@dimen/payment_icon_size"
+            android:layout_height="@dimen/payment_icon_size"
+            android:contentDescription="@string/payment_cod"
+            android:src="@drawable/ic_payment_cash" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textPaymentCodTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_cod"
+                android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+            <TextView
+                android:id="@+id/textPaymentCodSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:text="@string/payment_cod_desc"
+                android:textAppearance="@style/TextAppearance.Homexa.Caption" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imagePaymentCodRadio"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/payment_cod"
+            android:src="@drawable/ic_radio_selected" />
+    </LinearLayout>
+
+    <!-- JazzCash — visually unselected -->
+    <LinearLayout
+        android:id="@+id/paymentJazzCashRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_sm"
+        android:background="@drawable/bg_payment_unselected"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding">
+
+        <ImageView
+            android:id="@+id/imagePaymentJazzIcon"
+            android:layout_width="@dimen/payment_icon_size"
+            android:layout_height="@dimen/payment_icon_size"
+            android:contentDescription="@string/payment_jazzcash"
+            android:src="@drawable/ic_payment_jazzcash" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textPaymentJazzTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_jazzcash"
+                android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+            <TextView
+                android:id="@+id/textPaymentJazzSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:text="@string/payment_jazzcash_desc"
+                android:textAppearance="@style/TextAppearance.Homexa.Caption" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imagePaymentJazzRadio"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/payment_jazzcash"
+            android:src="@drawable/ic_radio_unselected" />
+    </LinearLayout>
+
+</LinearLayout>

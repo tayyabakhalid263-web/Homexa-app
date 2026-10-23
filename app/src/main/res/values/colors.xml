@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary: deep navy -->
+    <color name="primary">#0B1F3A</color>
+    <color name="primary_dark">#071528</color>
+    <color name="primary_light">#E8EEF5</color>
+
+    <!-- Accent: fresh teal -->
+    <color name="accent">#0D9488</color>
+    <color name="accent_dark">#0F766E</color>
+    <color name="accent_soft">#CCFBF1</color>
+
+    <!-- Soft secondary (kept for Material secondary mapping) -->
+    <color name="secondary">#0D9488</color>
+    <color name="secondary_soft">#CCFBF1</color>
+
+    <!-- Backgrounds -->
+    <color name="background">#F5F7FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="banner_start">#0B1F3A</color>
+    <color name="banner_end">#123A5C</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#1B1F24</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_hint">#9CA3AF</color>
+
+    <!-- Status colors for bookings -->
+    <color name="status_confirmed">#0D9488</color>
+    <color name="status_pending">#D97706</color>
+    <color name="status_completed">#059669</color>
+    <color name="status_confirmed_bg">#CCFBF1</color>
+    <color name="status_pending_bg">#FEF3C7</color>
+    <color name="status_completed_bg">#D1FAE5</color>
+
+    <!-- Payment selection -->
+    <color name="payment_selected_stroke">#0D9488</color>
+    <color name="payment_unselected_stroke">#E5E7EB</color>
+    <color name="payment_selected_bg">#F0FDFA</color>
+
+    <!-- Utility -->
+    <color name="divider">#E5E7EB</color>
+    <color name="star_yellow">#F59E0B</color>
+    <color name="icon_tint">#0D9488</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>
