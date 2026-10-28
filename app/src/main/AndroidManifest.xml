@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        UI-only submission:
+        Only Home opens when the app runs.
+        Other XML screens are for Layout Preview.
+        No navigation between screens.
+    -->
+    <application
+        android:name=".HomexaApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_homexa"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_homexa"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Homexa">
+
+        <activity
+            android:name=".screens.HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

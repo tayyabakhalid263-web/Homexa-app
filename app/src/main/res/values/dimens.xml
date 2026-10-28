@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Corner radius -->
+    <dimen name="radius_small">8dp</dimen>
+    <dimen name="radius_medium">12dp</dimen>
+    <dimen name="radius_large">16dp</dimen>
+    <dimen name="radius_xl">20dp</dimen>
+    <dimen name="radius_pill">24dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_sm">8dp</dimen>
+    <dimen name="space_md">12dp</dimen>
+    <dimen name="space_lg">16dp</dimen>
+    <dimen name="space_xl">24dp</dimen>
+    <dimen name="space_xxl">32dp</dimen>
+
+    <!-- Screen padding -->
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+
+    <!-- Card elevation (subtle shadow) -->
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="banner_elevation">3dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="button_radius">12dp</dimen>
+
+    <!-- Icons and images -->
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="avatar_size">56dp</dimen>
+    <dimen name="avatar_large">96dp</dimen>
+    <dimen name="category_icon_size">40dp</dimen>
+    <dimen name="logo_size">72dp</dimen>
+    <dimen name="payment_icon_size">40dp</dimen>
+    <dimen name="hero_image_height">180dp</dimen>
+
+    <!-- Bottom navigation -->
+    <dimen name="bottom_nav_height">64dp</dimen>
+
+    <!-- Inputs -->
+    <dimen name="input_height">52dp</dimen>
+    <dimen name="time_chip_height">40dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_title">24sp</dimen>
+    <dimen name="text_heading">20sp</dimen>
+    <dimen name="text_subheading">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_button">16sp</dimen>
+</resources>

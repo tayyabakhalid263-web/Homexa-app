@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- themes.xml keeps the theme entry clear for Android Studio -->
+    <style name="Theme.Homexa.App" parent="Theme.Homexa" />
+    <style name="TextAppearance.Homexa" parent="TextAppearance.AppCompat.Body1" />
+</resources>

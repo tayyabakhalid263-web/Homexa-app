@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/layoutBookingForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/screen_padding"
+                android:paddingTop="@dimen/space_xl"
+                android:paddingEnd="@dimen/screen_padding"
+                android:paddingBottom="@dimen/space_lg">
+
+                <TextView
+                    android:id="@+id/buttonBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_sm"
+                    android:text="@string/back"
+                    android:textAppearance="@style/TextAppearance.Homexa.Link" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    android:text="@string/book_service"
+                    android:textAppearance="@style/TextAppearance.Homexa.Title" />
+
+                <!-- Selected service / provider summary -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:background="@drawable/bg_card"
+                    android:elevation="@dimen/card_elevation"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <TextView
+                        android:id="@+id/textSelectedService"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/category_electrician"
+                        android:textAppearance="@style/TextAppearance.Homexa.Caption"
+                        android:textColor="@color/accent"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textSelectedProvider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_xs"
+                        android:text="@string/provider_ahmed_name"
+                        android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xl"
+                    android:text="@string/select_date"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <TextView
+                    android:id="@+id/textSelectDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/input_height"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical"
+                    android:hint="@string/choose_date"
+                    android:paddingStart="@dimen/space_md"
+                    android:paddingEnd="@dimen/space_md"
+                    android:text="@string/sample_date_display"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:text="@string/select_time"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <!-- Visual time options (static UI only) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Widget.Homexa.TimeChip"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/time_chip_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_time_chip_selected"
+                        android:text="@string/time_slot_morning"
+                        android:textColor="@color/accent" />
+
+                    <TextView
+                        style="@style/Widget.Homexa.TimeChip"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/time_chip_height"
+                        android:layout_marginStart="@dimen/space_sm"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_time_chip"
+                        android:text="@string/time_slot_afternoon" />
+
+                    <TextView
+                        style="@style/Widget.Homexa.TimeChip"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/time_chip_height"
+                        android:layout_marginStart="@dimen/space_sm"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_time_chip"
+                        android:text="@string/time_slot_evening" />
+                </LinearLayout>
+
+                <!-- Kept visible so existing Java time-picker listener still has a tappable field -->
+                <TextView
+                    android:id="@+id/textSelectTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/input_height"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical"
+                    android:hint="@string/choose_time"
+                    android:paddingStart="@dimen/space_md"
+                    android:paddingEnd="@dimen/space_md"
+                    android:text="@string/time_slot_morning"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:text="@string/enter_address"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <EditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="top"
+                    android:hint="@string/address_hint"
+                    android:inputType="textMultiLine"
+                    android:minHeight="@dimen/input_height"
+                    android:padding="@dimen/space_md"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="@dimen/text_body" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:text="@string/optional_note"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <EditText
+                    android:id="@+id/editNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="top"
+                    android:hint="@string/note_hint"
+                    android:inputType="textMultiLine"
+                    android:minHeight="@dimen/input_height"
+                    android:padding="@dimen/space_md"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="@dimen/text_body" />
+
+                <!-- Price breakdown -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xl"
+                    android:text="@string/price_breakdown"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:background="@drawable/bg_card"
+                    android:elevation="@dimen/card_elevation"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/estimated_price"
+                            android:textAppearance="@style/TextAppearance.Homexa.Body" />
+
+                        <TextView
+                            android:id="@+id/textEstimatedPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_subtotal"
+                            android:textAppearance="@style/TextAppearance.Homexa.Body"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_sm"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/service_fee"
+                            android:textAppearance="@style/TextAppearance.Homexa.Body" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_service_fee"
+                            android:textAppearance="@style/TextAppearance.Homexa.Body"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:layout_marginBottom="@dimen/space_md"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/estimated_total"
+                            android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_total"
+                            android:textAppearance="@style/TextAppearance.Homexa.Subheading"
+                            android:textColor="@color/primary" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xl"
+                    android:text="@string/payment_method"
+                    android:textAppearance="@style/TextAppearance.Homexa.Subheading" />
+
+                <include
+                    layout="@layout/item_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_sm" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonConfirmBooking"
+                style="@style/Widget.Homexa.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="@string/confirm_booking" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Success state kept for existing Java -->
+    <LinearLayout
+        android:id="@+id/layoutBookingSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/space_xl"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_circle_soft">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="✓"
+                android:textColor="@color/accent"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:text="@string/booking_success_title"
+            android:textAppearance="@style/TextAppearance.Homexa.Title"
+            android:textColor="@color/primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:gravity="center"
+            android:text="@string/booking_success_message"
+            android:textAppearance="@style/TextAppearance.Homexa.Body" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBackToHome"
+            style="@style/Widget.Homexa.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_xl"
+            android:clickable="false"
+            android:focusable="false"
+            android:text="@string/back_to_home" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonViewMyBookings"
+            style="@style/Widget.Homexa.Button.Outline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_md"
+            android:clickable="false"
+            android:focusable="false"
+            android:text="@string/view_my_bookings" />
+    </LinearLayout>
+
+</FrameLayout>
