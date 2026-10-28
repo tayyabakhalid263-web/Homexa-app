@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
@@ -103,191 +102,14 @@
                 android:text="@string/what_service_needed"
                 android:textAppearance="@style/TextAppearance.Homexa.Heading" />
 
-            <!-- Static service categories (UI only) -->
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCategories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_md"
-                android:overScrollMode="never"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <include layout="@layout/item_category_card" />
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/space_sm"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="@dimen/radius_medium"
-                        app:cardElevation="@dimen/card_elevation"
-                        app:strokeColor="@color/divider"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="@dimen/space_md">
-
-                            <FrameLayout
-                                android:layout_width="52dp"
-                                android:layout_height="52dp"
-                                android:background="@drawable/bg_circle_soft">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_icon_size"
-                                    android:layout_height="@dimen/category_icon_size"
-                                    android:layout_gravity="center"
-                                    android:contentDescription="@string/category_plumber"
-                                    android:src="@drawable/ic_category_plumber" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/space_sm"
-                                android:gravity="center"
-                                android:text="@string/category_plumber"
-                                android:textAppearance="@style/TextAppearance.Homexa.Caption"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/space_sm"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="@dimen/radius_medium"
-                        app:cardElevation="@dimen/card_elevation"
-                        app:strokeColor="@color/divider"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="@dimen/space_md">
-
-                            <FrameLayout
-                                android:layout_width="52dp"
-                                android:layout_height="52dp"
-                                android:background="@drawable/bg_circle_soft">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_icon_size"
-                                    android:layout_height="@dimen/category_icon_size"
-                                    android:layout_gravity="center"
-                                    android:contentDescription="@string/category_ac_repair"
-                                    android:src="@drawable/ic_category_ac" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/space_sm"
-                                android:gravity="center"
-                                android:text="@string/category_ac_repair"
-                                android:textAppearance="@style/TextAppearance.Homexa.Caption"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/space_sm"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="@dimen/radius_medium"
-                        app:cardElevation="@dimen/card_elevation"
-                        app:strokeColor="@color/divider"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="@dimen/space_md">
-
-                            <FrameLayout
-                                android:layout_width="52dp"
-                                android:layout_height="52dp"
-                                android:background="@drawable/bg_circle_soft">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_icon_size"
-                                    android:layout_height="@dimen/category_icon_size"
-                                    android:layout_gravity="center"
-                                    android:contentDescription="@string/category_cleaning"
-                                    android:src="@drawable/ic_category_cleaning" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/space_sm"
-                                android:gravity="center"
-                                android:maxLines="2"
-                                android:text="@string/category_cleaning"
-                                android:textAppearance="@style/TextAppearance.Homexa.Caption"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/space_sm"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="@dimen/radius_medium"
-                        app:cardElevation="@dimen/card_elevation"
-                        app:strokeColor="@color/divider"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="@dimen/space_md">
-
-                            <FrameLayout
-                                android:layout_width="52dp"
-                                android:layout_height="52dp"
-                                android:background="@drawable/bg_circle_soft">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_icon_size"
-                                    android:layout_height="@dimen/category_icon_size"
-                                    android:layout_gravity="center"
-                                    android:contentDescription="@string/category_painting"
-                                    android:src="@drawable/ic_category_painting" />
-                            </FrameLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/space_sm"
-                                android:gravity="center"
-                                android:text="@string/category_painting"
-                                android:textAppearance="@style/TextAppearance.Homexa.Caption"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-            </HorizontalScrollView>
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -296,11 +118,12 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <include
-                    layout="@layout/view_section_header"
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="@string/popular_services"
+                    android:textAppearance="@style/TextAppearance.Homexa.Heading" />
 
                 <TextView
                     android:id="@+id/textViewAllPopular"
@@ -311,36 +134,14 @@
                     android:textAppearance="@style/TextAppearance.Homexa.Link" />
             </LinearLayout>
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPopularServices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_md"
-                android:overScrollMode="never"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <include layout="@layout/item_service_card" />
-
-                    <include layout="@layout/item_service_card" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_xl"
-                android:text="@string/recommended_providers"
-                android:textAppearance="@style/TextAppearance.Homexa.Heading" />
-
-            <include
-                layout="@layout/item_provider_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_md" />
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -349,12 +150,25 @@
                 android:text="@string/recent_booking"
                 android:textAppearance="@style/TextAppearance.Homexa.Heading" />
 
-            <include
-                android:id="@+id/recentBookingCard"
-                layout="@layout/item_booking_card"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_md" />
+                android:layout_marginTop="@dimen/space_md">
+
+                <include
+                    android:id="@+id/recentBookingCard"
+                    layout="@layout/item_booking_card" />
+
+                <TextView
+                    android:id="@+id/textNoRecentBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    android:padding="@dimen/card_padding"
+                    android:text="@string/no_bookings"
+                    android:textAppearance="@style/TextAppearance.Homexa.Body"
+                    android:visibility="gone" />
+            </FrameLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

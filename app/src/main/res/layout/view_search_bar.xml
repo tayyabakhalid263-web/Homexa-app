@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Search bar look only. Not editable. No search logic. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/searchBarRoot"
     android:layout_width="match_parent"
@@ -16,15 +15,19 @@
         android:contentDescription="@string/search_hint"
         android:src="@drawable/ic_search" />
 
-    <TextView
+    <EditText
         android:id="@+id/editSearch"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/space_sm"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="@string/search_hint"
-        android:textColor="@color/text_hint"
+        android:background="@android:color/transparent"
+        android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint"
         android:textSize="@dimen/text_body" />
 
 </LinearLayout>

@@ -3,14 +3,13 @@ package com.homexa.app;
 import android.app.Application;
 
 /**
- * UI-only version.
- * No database and no app logic on startup.
+ * Application entry.
+ * No database in this version — data is kept in memory.
  */
 public class HomexaApp extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        // Intentionally empty for the UI-only submission.
     }
 }

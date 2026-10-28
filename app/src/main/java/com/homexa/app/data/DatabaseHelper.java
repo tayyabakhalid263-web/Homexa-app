@@ -1,9 +1,9 @@
 package com.homexa.app.data;
 
 /**
- * UI-only version.
- * Database is disabled for the first UI submission.
+ * Not used in this version.
+ * Database will be added in a later task.
  */
 public class DatabaseHelper {
-    // Intentionally empty.
+    // Intentionally unused — no database connection yet.
 }

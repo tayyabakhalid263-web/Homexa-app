@@ -107,6 +107,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/chipTimeMorning"
                         style="@style/Widget.Homexa.TimeChip"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/time_chip_height"
@@ -116,6 +117,7 @@
                         android:textColor="@color/accent" />
 
                     <TextView
+                        android:id="@+id/chipTimeAfternoon"
                         style="@style/Widget.Homexa.TimeChip"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/time_chip_height"
@@ -125,6 +127,7 @@
                         android:text="@string/time_slot_afternoon" />
 
                     <TextView
+                        android:id="@+id/chipTimeEvening"
                         style="@style/Widget.Homexa.TimeChip"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/time_chip_height"
@@ -134,7 +137,6 @@
                         android:text="@string/time_slot_evening" />
                 </LinearLayout>
 
-                <!-- Kept visible so existing Java time-picker listener still has a tappable field -->
                 <TextView
                     android:id="@+id/textSelectTime"
                     android:layout_width="match_parent"
@@ -145,7 +147,6 @@
                     android:hint="@string/choose_time"
                     android:paddingStart="@dimen/space_md"
                     android:paddingEnd="@dimen/space_md"
-                    android:text="@string/time_slot_morning"
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint"
                     android:textSize="@dimen/text_body" />
@@ -312,8 +313,6 @@
                 style="@style/Widget.Homexa.Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
-                android:clickable="false"
-                android:focusable="false"
                 android:text="@string/confirm_booking" />
         </LinearLayout>
     </LinearLayout>
@@ -365,8 +364,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:layout_marginTop="@dimen/space_xl"
-            android:clickable="false"
-            android:focusable="false"
             android:text="@string/back_to_home" />
 
         <com.google.android.material.button.MaterialButton
@@ -375,8 +372,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:layout_marginTop="@dimen/space_md"
-            android:clickable="false"
-            android:focusable="false"
             android:text="@string/view_my_bookings" />
     </LinearLayout>
 

@@ -1,12 +1,10 @@
 package com.homexa.app.utils;
 
-/**
- * UI-only version.
- * Shared constants are unused while functionality is disabled.
- */
 public final class Constants {
 
+    public static final String EXTRA_PROVIDER_ID = "extra_provider_id";
+    public static final String EXTRA_CATEGORY = "extra_category";
+
     private Constants() {
-        // No instances.
     }
 }

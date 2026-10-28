@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        UI-only submission:
-        Only Home opens when the app runs.
-        Other XML screens are for Layout Preview.
-        No navigation between screens.
-    -->
     <application
         android:name=".HomexaApp"
         android:allowBackup="true"
@@ -17,13 +11,63 @@
         android:theme="@style/Theme.Homexa">
 
         <activity
-            android:name=".screens.HomeActivity"
+            android:name=".screens.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".screens.SignupActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.HomeActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".screens.ServicesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.ServiceDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.BookingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".screens.MyBookingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.ElectricianActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.PlumberActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.AcRepairActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.HomeCleaningActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.PaintingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
     </application>
 
