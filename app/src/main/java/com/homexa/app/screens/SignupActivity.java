@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 import com.homexa.app.R;
+import com.homexa.app.data.AuthHelper;
 
 /**
- * Sign up screen with basic validation only (no server / database).
+ * Sign up screen — saves new user into SQLite users table.
  */
 public class SignupActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText editSignupPhone;
     private EditText editSignupPassword;
     private EditText editSignupConfirmPassword;
+    private MaterialButton buttonCreateAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class SignupActivity extends AppCompatActivity {
         editSignupPhone = findViewById(R.id.editSignupPhone);
         editSignupPassword = findViewById(R.id.editSignupPassword);
         editSignupConfirmPassword = findViewById(R.id.editSignupConfirmPassword);
-        MaterialButton buttonCreateAccount = findViewById(R.id.buttonCreateAccount);
+        buttonCreateAccount = findViewById(R.id.buttonCreateAccount);
         TextView textSignInLink = findViewById(R.id.textSignInLink);
 
         buttonCreateAccount.setOnClickListener(v -> attemptSignup());
@@ -66,8 +68,8 @@ public class SignupActivity extends AppCompatActivity {
             editSignupPhone.requestFocus();
             return;
         }
-        if (TextUtils.isEmpty(password) || password.length() < 4) {
-            editSignupPassword.setError("Password must be at least 4 characters");
+        if (TextUtils.isEmpty(password) || password.length() < 6) {
+            editSignupPassword.setError("Password must be at least 6 characters");
             editSignupPassword.requestFocus();
             return;
         }
@@ -77,8 +79,25 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "Account created (demo). Please sign in.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
+        buttonCreateAccount.setEnabled(false);
+
+        AuthHelper.signUp(this, name, email, phone, password, new AuthHelper.AuthCallback() {
+            @Override
+            public void onSuccess(long userId) {
+                buttonCreateAccount.setEnabled(true);
+                Toast.makeText(SignupActivity.this,
+                        "Account created! You are signed in.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onError(String message) {
+                buttonCreateAccount.setEnabled(true);
+                Toast.makeText(SignupActivity.this, message, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

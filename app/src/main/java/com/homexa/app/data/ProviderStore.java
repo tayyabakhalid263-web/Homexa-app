@@ -7,13 +7,22 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * In-memory provider list (no database).
+ * In-memory cache of providers (filled from SQLite at app start).
  */
 public final class ProviderStore {
 
-    private static final List<Provider> PROVIDERS = new ArrayList<>(SampleData.getProviders());
+    private static final List<Provider> PROVIDERS = new ArrayList<>();
 
     private ProviderStore() {
+    }
+
+    public static void replaceAll(List<Provider> providers) {
+        PROVIDERS.clear();
+        if (providers != null && !providers.isEmpty()) {
+            PROVIDERS.addAll(providers);
+        } else {
+            PROVIDERS.addAll(SampleData.getProviders());
+        }
     }
 
     public static List<Provider> getAllProviders() {

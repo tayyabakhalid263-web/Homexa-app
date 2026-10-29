@@ -199,9 +199,23 @@ public class BookingActivity extends AppCompatActivity {
                 selectedProvider.getStartingPrice(),
                 Booking.STATUS_CONFIRMED
         );
-        BookingStore.addBooking(booking);
 
-        layoutBookingForm.setVisibility(View.GONE);
-        layoutBookingSuccess.setVisibility(View.VISIBLE);
+        buttonConfirmBooking.setEnabled(false);
+
+        // Save booking into SQLite for the logged-in user
+        BookingStore.addBooking(this, booking, new BookingStore.SimpleCallback() {
+            @Override
+            public void onSuccess() {
+                buttonConfirmBooking.setEnabled(true);
+                layoutBookingForm.setVisibility(View.GONE);
+                layoutBookingSuccess.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onError(String message) {
+                buttonConfirmBooking.setEnabled(true);
+                Toast.makeText(BookingActivity.this, message, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

@@ -55,8 +55,24 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setupRecentBooking();
         bottomNavigation.setSelectedItemId(R.id.nav_home);
+        // Refresh recent booking from SQLite for logged-in user
+        BookingStore.refreshFromDb(this, new BookingStore.SimpleCallback() {
+            @Override
+            public void onSuccess() {
+                setupRecentBooking();
+            }
+
+            @Override
+            public void onError(String message) {
+                setupRecentBooking();
+            }
+        });
+        popularProviders.clear();
+        popularProviders.addAll(ProviderStore.getPopularProviders());
+        if (popularAdapter != null) {
+            popularAdapter.submitList(popularProviders);
+        }
     }
 
     private void findViews() {

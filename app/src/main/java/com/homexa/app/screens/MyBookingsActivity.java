@@ -17,6 +17,9 @@ import com.homexa.app.utils.NavigationHelper;
 
 import java.util.List;
 
+/**
+ * Shows bookings for the logged-in user (loaded from SQLite).
+ */
 public class MyBookingsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerBookings;
@@ -52,6 +55,20 @@ public class MyBookingsActivity extends AppCompatActivity {
     }
 
     private void loadBookings() {
+        BookingStore.refreshFromDb(this, new BookingStore.SimpleCallback() {
+            @Override
+            public void onSuccess() {
+                showBookings();
+            }
+
+            @Override
+            public void onError(String message) {
+                showBookings();
+            }
+        });
+    }
+
+    private void showBookings() {
         List<Booking> bookings = BookingStore.getAllBookings();
         bookingAdapter.submitList(bookings);
         boolean empty = bookings.isEmpty();

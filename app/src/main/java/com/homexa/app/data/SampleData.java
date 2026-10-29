@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Static sample data only (no database).
+ * Sample categories + providers.
+ * Providers are copied into SQLite once on first app launch (see DatabaseHelper).
  */
 public final class SampleData {
 

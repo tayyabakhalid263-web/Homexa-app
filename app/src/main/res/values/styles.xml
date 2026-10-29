@@ -63,6 +63,10 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <!-- Base widget styles (needed because dotted names look for parent styles) -->
+    <style name="Widget.Homexa" parent="android:Widget" />
+    <style name="Widget.Homexa.Button" parent="Widget.MaterialComponents.Button" />
+
     <!-- Primary filled button -->
     <style name="Widget.Homexa.Button.Primary" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_height">@dimen/button_height</item>

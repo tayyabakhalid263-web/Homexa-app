@@ -13,24 +13,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 import com.homexa.app.R;
+import com.homexa.app.data.AuthHelper;
 
 /**
- * Login screen with basic validation only (no server / database).
+ * Login screen — checks email/password in SQLite.
  */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editLoginEmail;
     private EditText editLoginPassword;
+    private MaterialButton buttonSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // If user already logged in, go straight to Home
+        if (AuthHelper.isLoggedIn(this)) {
+            openHome();
+            return;
+        }
+
         editLoginEmail = findViewById(R.id.editLoginEmail);
         editLoginPassword = findViewById(R.id.editLoginPassword);
         CheckBox checkboxRememberMe = findViewById(R.id.checkboxRememberMe);
-        MaterialButton buttonSignIn = findViewById(R.id.buttonSignIn);
+        buttonSignIn = findViewById(R.id.buttonSignIn);
         TextView textCreateAccount = findViewById(R.id.textCreateAccount);
         TextView textForgotPassword = findViewById(R.id.textForgotPassword);
 
@@ -38,8 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         textCreateAccount.setOnClickListener(v ->
                 startActivity(new Intent(this, SignupActivity.class)));
         textForgotPassword.setOnClickListener(v ->
-                Toast.makeText(this, "Reset link will be added later", Toast.LENGTH_SHORT).show());
-        // Remember-me is UI only for now.
+                Toast.makeText(this, "Use Sign Up if you are new", Toast.LENGTH_SHORT).show());
         checkboxRememberMe.setChecked(false);
     }
 
@@ -57,12 +64,31 @@ public class LoginActivity extends AppCompatActivity {
             editLoginEmail.requestFocus();
             return;
         }
-        if (TextUtils.isEmpty(password) || password.length() < 4) {
-            editLoginPassword.setError("Password must be at least 4 characters");
+        if (TextUtils.isEmpty(password) || password.length() < 6) {
+            editLoginPassword.setError("Password must be at least 6 characters");
             editLoginPassword.requestFocus();
             return;
         }
 
+        buttonSignIn.setEnabled(false);
+
+        AuthHelper.signIn(this, email, password, new AuthHelper.AuthCallback() {
+            @Override
+            public void onSuccess(long userId) {
+                buttonSignIn.setEnabled(true);
+                Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
+                openHome();
+            }
+
+            @Override
+            public void onError(String message) {
+                buttonSignIn.setEnabled(true);
+                Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void openHome() {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
